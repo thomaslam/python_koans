@@ -18,6 +18,11 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
+    if (a <= 0 or b <= 0 or c <= 0):
+        raise TriangleError()
+    if (a + c <= b or a + b <= c or c + b <= a):
+        raise TriangleError() 
+
     if (a == b or b == c or c == a):
         return 'equilateral' if a == b == c else 'isosceles' 
     return 'scalene'
